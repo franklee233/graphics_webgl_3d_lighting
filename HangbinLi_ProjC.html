@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hangbin Li - Project C</title>
+    <style type="text/css">
+    #hci {
+        width: 20%;
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color:rgba(255, 255, 255, 0.25);
+        font-size: 13px;
+        color: rgba(255, 255, 255, 1);
+        font-family: Helvetica, arial, sans-serif;
+    }
+    #help_animation_div {
+        color: #00BFFF;
+    }
+    body {
+        margin: 0px;
+        overflow: hidden;
+    }
+    </style>
+    <script src="./lib/webgl-utils.js"></script>
+    <script src="./lib/webgl-debug.js"></script>
+    <script src="./lib/cuon-utils.js"></script>
+    <script src="./lib/cuon-matrix.js"></script>
+    <script src="./HangbinLi_ProjC_main.js"></script>
+    <script src="./HangbinLi_ProjC_interact.js"></script>
+    <script src="./HangbinLi_ProjC_makeshape.js"></script>
+</head>
+
+<body onload="main()" onresize="winResize()">
+    <div id="interface">
+        <div id="hci">
+            <div id="title">
+                <h4>EECS 351 - Project C by Hangbin Li
+                </h4>
+                <h5>SpongeBob SquarePants Toy in the Spotlight</h5>
+            </div>
+            <input type="button" id="lamp0_toggle_btn" onclick="toggleLamp(0)" value=" Turn Off User Adjustable Light " />
+            <div id="lamp0_pos_div"></div>
+            <p></p>
+            <input type="button" id="lamp1_toggle_btn" onclick="toggleLamp(1)" value=" Turn Off Eye/Camera Light " />
+            <p></p>
+            <input type="button" id="ambient_toggle_btn" onclick="toggleLamp(2)" value=" Turn Off Ambient Light " />
+            <p></p>
+            <input type="button" id="toggle_animation" onclick="toggleAnimation()" value=" Pause Animation " />
+            <!--             <input type="button" id="toggle_eye_position" onclick="toggleEyePos()" value=" Pos 2 Shortcut " />
+ -->
+            <p></p>
+            <div id="help_btn_div">
+                <input type="button" id="help_btn" onclick="writeHelp2Html()" value=" Hide Help (F1/Esc) " />
+            </div>
+            <br>
+            <div id="help_control_div"></div>
+            <div id="help_animation_div"></div>
+        </div>
+        <canvas id="webgl">
+            Please use a browser that supports "canvas"
+        </canvas>
+    </div>
+</body>
+
+</html>
